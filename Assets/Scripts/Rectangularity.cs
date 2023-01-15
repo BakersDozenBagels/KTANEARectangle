@@ -5,15 +5,15 @@ using Random = UnityEngine.Random;
 
 public class Rectangularity : MonoBehaviour
 {
-    [SerializeField]
+    [SerializeField, RummageNoRemove, RummageNoRename]
     private Color[] _colors;
-    [SerializeField]
+    [SerializeField, RummageNoRemove, RummageNoRename]
     private Renderer _rectangle;
-    [SerializeField]
+    [SerializeField, RummageNoRemove, RummageNoRename]
     private KMAudio _audio;
-    [SerializeField]
+    [SerializeField, RummageNoRemove, RummageNoRename]
     private KMBombInfo _info;
-    [SerializeField]
+    [SerializeField, RummageNoRemove, RummageNoRename]
     private TextMesh _text;
 
     private bool _initted, _isSolved;
@@ -30,6 +30,7 @@ public class Rectangularity : MonoBehaviour
 
     private static readonly string[] _colorNames = { "ORANGE", "PINK", "CYAN", "YELLOW", "LAVENDER", "BROWN", "TAN", "BLUE", "JADE", "INDIGO", "WHITE" };
 
+    [RummageNoRemove, RummageNoRename]
     private void Start()
     {
         _text.gameObject.SetActive(GetComponent<KMColorblindMode>().ColorblindModeActive);
